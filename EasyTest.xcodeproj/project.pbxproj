@@ -11,6 +11,15 @@
 		2B00C9F81F998B600043808B /* EasyTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00C9F71F998B600043808B /* EasyTestTests.swift */; };
 		2B00CA051F998BBF0043808B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B00CA041F998BBF0043808B /* LaunchScreen.storyboard */; };
 		2B00CA071F998BCF0043808B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B00CA061F998BCF0043808B /* Assets.xcassets */; };
+		2B00CA0A1F998DA50043808B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00CA091F998DA50043808B /* MapViewController.swift */; };
+		2B00CA0D1F99907E0043808B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00CA0C1F99907E0043808B /* MapViewModel.swift */; };
+		2B2400001F9AC2B8004DA694 /* NetworkURLRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24FFFF1F9AC2B8004DA694 /* NetworkURLRequestable.swift */; };
+		2B2400021F9AC32F004DA694 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400011F9AC32F004DA694 /* Endpoints.swift */; };
+		2B2400041F9AC636004DA694 /* CarsURLRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400031F9AC636004DA694 /* CarsURLRequestable.swift */; };
+		2B2400071F9AC961004DA694 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400061F9AC961004DA694 /* Car.swift */; };
+		2B2400091F9AD007004DA694 /* CarsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400081F9AD007004DA694 /* CarsResult.swift */; };
+		2B24FFFB1F9AC27B004DA694 /* CompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24FFFA1F9AC27B004DA694 /* CompletionHandler.swift */; };
+		2B24FFFE1F9AC2B2004DA694 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24FFFD1F9AC2B2004DA694 /* NetworkError.swift */; };
 		FB5C80A722827AE544AE7A47 /* Pods_EasyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59240B0F90DC21AA5932AAC /* Pods_EasyTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +42,15 @@
 		2B00C9F91F998B600043808B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B00CA041F998BBF0043808B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B00CA061F998BCF0043808B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B00CA091F998DA50043808B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2B00CA0C1F99907E0043808B /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		2B2400011F9AC32F004DA694 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		2B2400031F9AC636004DA694 /* CarsURLRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsURLRequestable.swift; sourceTree = "<group>"; };
+		2B2400061F9AC961004DA694 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		2B2400081F9AD007004DA694 /* CarsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsResult.swift; sourceTree = "<group>"; };
+		2B24FFFA1F9AC27B004DA694 /* CompletionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionHandler.swift; sourceTree = "<group>"; };
+		2B24FFFD1F9AC2B2004DA694 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2B24FFFF1F9AC2B8004DA694 /* NetworkURLRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkURLRequestable.swift; sourceTree = "<group>"; };
 		B0EE8291AA028C67CF2DF060 /* Pods-EasyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyTest/Pods-EasyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DE02916B0F2641C5BD94FD45 /* Pods-EasyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyTest/Pods-EasyTest.release.xcconfig"; sourceTree = "<group>"; };
 		F59240B0F90DC21AA5932AAC /* Pods_EasyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				2B00CA021F998B830043808B /* Application */,
+				2B00CA081F998D980043808B /* ViewControllers */,
+				2B00CA0B1F9990750043808B /* ViewModels */,
+				2B24FFFC1F9AC29B004DA694 /* Network */,
+				2B2400051F9AC954004DA694 /* Models */,
+				2B24FFF91F9AC25F004DA694 /* Helpers */,
 				2B00CA031F998BB20043808B /* Resources */,
 			);
 			path = EasyTest;
@@ -117,6 +140,7 @@
 			children = (
 				2B00C9E21F998B5F0043808B /* AppDelegate.swift */,
 				2B00C9EE1F998B5F0043808B /* Info.plist */,
+				2B2400011F9AC32F004DA694 /* Endpoints.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -128,6 +152,49 @@
 				2B00CA061F998BCF0043808B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2B00CA081F998D980043808B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B00CA091F998DA50043808B /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2B00CA0B1F9990750043808B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B00CA0C1F99907E0043808B /* MapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B2400051F9AC954004DA694 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B2400061F9AC961004DA694 /* Car.swift */,
+				2B2400081F9AD007004DA694 /* CarsResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B24FFF91F9AC25F004DA694 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2B24FFFA1F9AC27B004DA694 /* CompletionHandler.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2B24FFFC1F9AC29B004DA694 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2B24FFFD1F9AC2B2004DA694 /* NetworkError.swift */,
+				2B24FFFF1F9AC2B8004DA694 /* NetworkURLRequestable.swift */,
+				2B2400031F9AC636004DA694 /* CarsURLRequestable.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +360,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2400001F9AC2B8004DA694 /* NetworkURLRequestable.swift in Sources */,
 				2B00C9E31F998B5F0043808B /* AppDelegate.swift in Sources */,
+				2B00CA0A1F998DA50043808B /* MapViewController.swift in Sources */,
+				2B2400021F9AC32F004DA694 /* Endpoints.swift in Sources */,
+				2B2400041F9AC636004DA694 /* CarsURLRequestable.swift in Sources */,
+				2B2400071F9AC961004DA694 /* Car.swift in Sources */,
+				2B24FFFB1F9AC27B004DA694 /* CompletionHandler.swift in Sources */,
+				2B2400091F9AD007004DA694 /* CarsResult.swift in Sources */,
+				2B00CA0D1F99907E0043808B /* MapViewModel.swift in Sources */,
+				2B24FFFE1F9AC2B2004DA694 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
