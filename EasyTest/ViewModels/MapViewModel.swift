@@ -33,9 +33,7 @@ struct MapViewModel {
   func update(coordinate: CLLocationCoordinate2D, completion: @escaping CompletionHandlerType<MapViewModel>) {
     GeocodingURLRequestable(latitude: coordinate.latitude, longitude: coordinate.longitude).request { callback in
       do {
-        guard let address = try callback() as? String else {
-          fatalError()
-        }
+        let address = try callback() as? String ?? "endereço não mapeado"
         CarsURLRequestable(latitude: coordinate.latitude, longitude: coordinate.longitude).request { callback in
           do {
             guard let cars = try callback() as? [Car] else {

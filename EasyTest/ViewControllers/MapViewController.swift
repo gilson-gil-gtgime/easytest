@@ -19,18 +19,31 @@ final class MapViewController: UIViewController {
     return mapView
   }()
 
+  fileprivate lazy var gpsButton: UIButton = {
+    let button = UIButton()
+    button.backgroundColor = .white
+    button.setImage(UIImage(named: "icons8-Near Me-100"), for: .normal)
+    button.imageEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+    button.layer.cornerRadius = 4
+    button.layer.borderWidth = 1
+    button.layer.borderColor = UIColor.lightGray.cgColor
+
+    button.addTarget(self, action: #selector(gpsTapped), for: .touchUpInside)
+    return button
+  }()
+
   fileprivate let panGesture = UIPanGestureRecognizer(target: self, action: nil)
+
+  fileprivate let regionSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
 
   fileprivate var userHasDragged = false
 
-  fileprivate var mapViewModel: MapViewModel? {
+  fileprivate var mapViewModel = MapViewModel() {
     didSet {
       DispatchQueue.main.async {
         self.mapView.removeAnnotations(self.mapView.annotations)
-        if let cars = self.mapViewModel?.cars {
-          self.mapView.addAnnotations(cars)
-        }
-        if let userLocation = self.mapViewModel?.userLocation {
+        self.mapView.addAnnotations(self.mapViewModel.cars)
+        if let userLocation = self.mapViewModel.userLocation {
           self.mapView.addAnnotation(userLocation)
         }
       }
@@ -55,11 +68,16 @@ final class MapViewController: UIViewController {
 
   private func addSubviews() {
     view.addSubview(mapView)
+    view.addSubview(gpsButton)
   }
 
   private func addConstraints() {
-    constrain(mapView) { mapView in
+    let margins = CGFloat(20)
+    constrain(mapView, gpsButton) { mapView, gpsButton in
       mapView.edges == mapView.superview!.edges
+
+      gpsButton.bottom == gpsButton.superview!.bottom - margins
+      gpsButton.right == gpsButton.superview!.right - margins
     }
   }
 
@@ -70,11 +88,19 @@ final class MapViewController: UIViewController {
   }
 }
 
+// MARK: - Actions
+extension MapViewController {
+  @objc func gpsTapped() {
+    update(with: mapView.userLocation.coordinate)
+    mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+  }
+}
+
 // MARK: - Private
 private extension MapViewController {
   func update(with coordinate: CLLocationCoordinate2D) {
     ProgressHUD.show()
-    mapViewModel?.update(coordinate: coordinate) { [weak self] callback in
+    mapViewModel.update(coordinate: coordinate) { [weak self] callback in
       ProgressHUD.dismiss()
       do {
         let viewModel = try callback()
@@ -112,21 +138,17 @@ extension MapViewController: MKMapViewDelegate {
     guard userHasDragged else {
       return
     }
-    if mapViewModel == nil {
-      mapViewModel = MapViewModel()
-    }
     update(with: mapView.centerCoordinate)
   }
 
   func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-    guard mapViewModel == nil else {
+    guard !userHasDragged else {
       return
     }
     guard let location = userLocation.location else {
       return
     }
-    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-    let region = MKCoordinateRegion(center: location.coordinate, span: span)
+    let region = MKCoordinateRegion(center: location.coordinate, span: regionSpan)
     mapView.setRegion(region, animated: true)
     mapViewModel = MapViewModel()
     update(with: location.coordinate)
