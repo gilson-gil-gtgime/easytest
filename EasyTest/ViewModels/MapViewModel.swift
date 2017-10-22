@@ -12,10 +12,10 @@ import CoreLocation
 
 struct MapViewModel {
   let locationManager: CLLocationManager
-  let coordinate: CLLocationCoordinate2D?
+  let userLocation: UserLocation?
   let cars: [Car]
 
-  init(locationManager: CLLocationManager? = nil, coordinate: CLLocationCoordinate2D? = nil, cars: [Car] = []) {
+  init(locationManager: CLLocationManager? = nil, userLocation: UserLocation? = nil, cars: [Car] = []) {
     if let locationManager = locationManager {
       self.locationManager = locationManager
     } else {
@@ -26,7 +26,7 @@ struct MapViewModel {
       newLocationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
       self.locationManager = newLocationManager
     }
-    self.coordinate = coordinate
+    self.userLocation = userLocation
     self.cars = cars
   }
 
@@ -36,7 +36,8 @@ struct MapViewModel {
         guard let cars = try callback() as? [Car] else {
           fatalError()
         }
-        let viewModel = MapViewModel(locationManager: self.locationManager, coordinate: coordinate, cars: cars)
+        let userLocation = UserLocation(coordinate: coordinate)
+        let viewModel = MapViewModel(locationManager: self.locationManager, userLocation: userLocation, cars: cars)
         completion { viewModel }
       } catch {
         completion { throw error }
@@ -45,11 +46,11 @@ struct MapViewModel {
   }
 
   func nearestCar() -> Car? {
-    guard let coordinate = coordinate else {
+    guard let userLocation = userLocation else {
       return nil
     }
-    let userLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-    let nearest = cars.nearest(from: userLocation)
+    let location = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+    let nearest = cars.nearest(from: location)
     return nearest
   }
 }

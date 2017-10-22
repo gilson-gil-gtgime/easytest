@@ -30,6 +30,9 @@ final class MapViewController: UIViewController {
         if let cars = self.mapViewModel?.cars {
           self.mapView.addAnnotations(cars)
         }
+        if let userLocation = self.mapViewModel?.userLocation {
+          self.mapView.addAnnotation(userLocation)
+        }
       }
     }
   }
@@ -128,12 +131,26 @@ extension MapViewController: MKMapViewDelegate {
   }
 
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    if let carView = mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(CarView.self)) as? CarView {
-      carView.car = annotation as? Car
-      return carView
-    } else {
-      let carView = CarView(car: annotation as? Car)
-      return carView
+    switch annotation {
+    case is Car:
+      if let carView = mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(CarView.self)) as? CarView {
+        carView.car = annotation as? Car
+        return carView
+      } else {
+        let carView = CarView(car: annotation as? Car)
+        return carView
+      }
+    case is UserLocation:
+      if let userLocationView = mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(UserLocationView.self)) as? UserLocationView {
+        userLocationView.userLocation = annotation as? UserLocation
+        return userLocationView
+      } else {
+        let userLocationView = UserLocationView(userLocation: annotation as? UserLocation)
+        userLocationView?.canShowCallout = true
+        return userLocationView
+      }
+    default:
+      return nil
     }
   }
 }

@@ -14,6 +14,8 @@
 		2B00CA0A1F998DA50043808B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00CA091F998DA50043808B /* MapViewController.swift */; };
 		2B00CA0D1F99907E0043808B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00CA0C1F99907E0043808B /* MapViewModel.swift */; };
 		2B2276681F9C36E90072613A /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2276671F9C36E90072613A /* CarView.swift */; };
+		2B22766B1F9C42160072613A /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22766A1F9C42160072613A /* UserLocation.swift */; };
+		2B22766D1F9C43C80072613A /* UserLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22766C1F9C43C80072613A /* UserLocationView.swift */; };
 		2B2400001F9AC2B8004DA694 /* NetworkURLRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24FFFF1F9AC2B8004DA694 /* NetworkURLRequestable.swift */; };
 		2B2400021F9AC32F004DA694 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400011F9AC32F004DA694 /* Endpoints.swift */; };
 		2B2400041F9AC636004DA694 /* CarsURLRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400031F9AC636004DA694 /* CarsURLRequestable.swift */; };
@@ -46,6 +48,8 @@
 		2B00CA091F998DA50043808B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2B00CA0C1F99907E0043808B /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2B2276671F9C36E90072613A /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		2B22766A1F9C42160072613A /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		2B22766C1F9C43C80072613A /* UserLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationView.swift; sourceTree = "<group>"; };
 		2B2400011F9AC32F004DA694 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		2B2400031F9AC636004DA694 /* CarsURLRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsURLRequestable.swift; sourceTree = "<group>"; };
 		2B2400061F9AC961004DA694 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -117,9 +121,9 @@
 		2B00C9E11F998B5F0043808B /* EasyTest */ = {
 			isa = PBXGroup;
 			children = (
-				2B2276661F9C36DD0072613A /* Views */,
 				2B00CA021F998B830043808B /* Application */,
 				2B00CA081F998D980043808B /* ViewControllers */,
+				2B2276661F9C36DD0072613A /* Views */,
 				2B00CA0B1F9990750043808B /* ViewModels */,
 				2B24FFFC1F9AC29B004DA694 /* Network */,
 				2B2400051F9AC954004DA694 /* Models */,
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				2B2276671F9C36E90072613A /* CarView.swift */,
+				2B22766C1F9C43C80072613A /* UserLocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				2B2400061F9AC961004DA694 /* Car.swift */,
 				2B2400081F9AD007004DA694 /* CarsResult.swift */,
+				2B22766A1F9C42160072613A /* UserLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +386,8 @@
 				2B2400071F9AC961004DA694 /* Car.swift in Sources */,
 				2B24FFFB1F9AC27B004DA694 /* CompletionHandler.swift in Sources */,
 				2B2400091F9AD007004DA694 /* CarsResult.swift in Sources */,
+				2B22766D1F9C43C80072613A /* UserLocationView.swift in Sources */,
+				2B22766B1F9C42160072613A /* UserLocation.swift in Sources */,
 				2B00CA0D1F99907E0043808B /* MapViewModel.swift in Sources */,
 				2B24FFFE1F9AC2B2004DA694 /* NetworkError.swift in Sources */,
 			);
