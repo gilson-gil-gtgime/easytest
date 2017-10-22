@@ -13,6 +13,10 @@ struct Endpoints {
     return "http://quasinada-ryu.easytaxi.net.br/api/"
   }
 
+  static var baseURLGeocodingString: String {
+    return "https://maps.googleapis.com/maps/api/geocode/json?key=\(Constants.googleMapsAPIKey)&latlng="
+  }
+
   static var baseURL: URL {
     guard let url = URL(string: baseURLString) else {
       fatalError()

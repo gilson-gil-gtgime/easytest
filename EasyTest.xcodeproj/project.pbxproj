@@ -23,6 +23,10 @@
 		2B2400091F9AD007004DA694 /* CarsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2400081F9AD007004DA694 /* CarsResult.swift */; };
 		2B24FFFB1F9AC27B004DA694 /* CompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24FFFA1F9AC27B004DA694 /* CompletionHandler.swift */; };
 		2B24FFFE1F9AC2B2004DA694 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24FFFD1F9AC2B2004DA694 /* NetworkError.swift */; };
+		2BC695951F9C467C002A2AEE /* GeocodingURLRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC695941F9C467C002A2AEE /* GeocodingURLRequestable.swift */; };
+		2BC695971F9C4716002A2AEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC695961F9C4716002A2AEE /* Constants.swift */; };
+		2BC695991F9C491D002A2AEE /* GeolocationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC695981F9C491D002A2AEE /* GeolocationResult.swift */; };
+		2BC6959B1F9C49BE002A2AEE /* GeolocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6959A1F9C49BE002A2AEE /* GeolocationAddress.swift */; };
 		FB5C80A722827AE544AE7A47 /* Pods_EasyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59240B0F90DC21AA5932AAC /* Pods_EasyTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		2B24FFFA1F9AC27B004DA694 /* CompletionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionHandler.swift; sourceTree = "<group>"; };
 		2B24FFFD1F9AC2B2004DA694 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2B24FFFF1F9AC2B8004DA694 /* NetworkURLRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkURLRequestable.swift; sourceTree = "<group>"; };
+		2BC695941F9C467C002A2AEE /* GeocodingURLRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingURLRequestable.swift; sourceTree = "<group>"; };
+		2BC695961F9C4716002A2AEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2BC695981F9C491D002A2AEE /* GeolocationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationResult.swift; sourceTree = "<group>"; };
+		2BC6959A1F9C49BE002A2AEE /* GeolocationAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationAddress.swift; sourceTree = "<group>"; };
 		B0EE8291AA028C67CF2DF060 /* Pods-EasyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyTest/Pods-EasyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DE02916B0F2641C5BD94FD45 /* Pods-EasyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyTest/Pods-EasyTest.release.xcconfig"; sourceTree = "<group>"; };
 		F59240B0F90DC21AA5932AAC /* Pods_EasyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +156,7 @@
 				2B00C9E21F998B5F0043808B /* AppDelegate.swift */,
 				2B00C9EE1F998B5F0043808B /* Info.plist */,
 				2B2400011F9AC32F004DA694 /* Endpoints.swift */,
+				2BC695961F9C4716002A2AEE /* Constants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -192,6 +201,8 @@
 				2B2400061F9AC961004DA694 /* Car.swift */,
 				2B2400081F9AD007004DA694 /* CarsResult.swift */,
 				2B22766A1F9C42160072613A /* UserLocation.swift */,
+				2BC695981F9C491D002A2AEE /* GeolocationResult.swift */,
+				2BC6959A1F9C49BE002A2AEE /* GeolocationAddress.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +221,7 @@
 				2B24FFFD1F9AC2B2004DA694 /* NetworkError.swift */,
 				2B24FFFF1F9AC2B8004DA694 /* NetworkURLRequestable.swift */,
 				2B2400031F9AC636004DA694 /* CarsURLRequestable.swift */,
+				2BC695941F9C467C002A2AEE /* GeocodingURLRequestable.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -382,12 +394,16 @@
 				2B2276681F9C36E90072613A /* CarView.swift in Sources */,
 				2B00CA0A1F998DA50043808B /* MapViewController.swift in Sources */,
 				2B2400021F9AC32F004DA694 /* Endpoints.swift in Sources */,
+				2BC695991F9C491D002A2AEE /* GeolocationResult.swift in Sources */,
+				2BC695971F9C4716002A2AEE /* Constants.swift in Sources */,
 				2B2400041F9AC636004DA694 /* CarsURLRequestable.swift in Sources */,
 				2B2400071F9AC961004DA694 /* Car.swift in Sources */,
 				2B24FFFB1F9AC27B004DA694 /* CompletionHandler.swift in Sources */,
 				2B2400091F9AD007004DA694 /* CarsResult.swift in Sources */,
 				2B22766D1F9C43C80072613A /* UserLocationView.swift in Sources */,
 				2B22766B1F9C42160072613A /* UserLocation.swift in Sources */,
+				2BC6959B1F9C49BE002A2AEE /* GeolocationAddress.swift in Sources */,
+				2BC695951F9C467C002A2AEE /* GeocodingURLRequestable.swift in Sources */,
 				2B00CA0D1F99907E0043808B /* MapViewModel.swift in Sources */,
 				2B24FFFE1F9AC2B2004DA694 /* NetworkError.swift in Sources */,
 			);

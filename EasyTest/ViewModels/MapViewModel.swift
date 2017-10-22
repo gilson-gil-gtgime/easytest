@@ -31,14 +31,23 @@ struct MapViewModel {
   }
 
   func update(coordinate: CLLocationCoordinate2D, completion: @escaping CompletionHandlerType<MapViewModel>) {
-    CarsURLRequestable(latitude: coordinate.latitude, longitude: coordinate.longitude).request { callback in
+    GeocodingURLRequestable(latitude: coordinate.latitude, longitude: coordinate.longitude).request { callback in
       do {
-        guard let cars = try callback() as? [Car] else {
+        guard let address = try callback() as? String else {
           fatalError()
         }
-        let userLocation = UserLocation(coordinate: coordinate)
-        let viewModel = MapViewModel(locationManager: self.locationManager, userLocation: userLocation, cars: cars)
-        completion { viewModel }
+        CarsURLRequestable(latitude: coordinate.latitude, longitude: coordinate.longitude).request { callback in
+          do {
+            guard let cars = try callback() as? [Car] else {
+              fatalError()
+            }
+            let userLocation = UserLocation(coordinate: coordinate, title: address)
+            let viewModel = MapViewModel(locationManager: self.locationManager, userLocation: userLocation, cars: cars)
+            completion { viewModel }
+          } catch {
+            completion { throw error }
+          }
+        }
       } catch {
         completion { throw error }
       }

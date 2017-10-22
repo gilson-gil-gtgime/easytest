@@ -37,7 +37,7 @@ struct CarsURLRequestable: URLRequestable {
 
   func handleResponse(response: DataResponse<Any>, completion: @escaping CompletionHandlerType<Any?>) {
     guard let json = response.result.value as? NSDictionary,
-      let carsResult = CarsResult.from(json)else {
+      let carsResult = CarsResult.from(json) else {
         completion { throw NetworkError.api }
         return
     }
