@@ -23,7 +23,8 @@ enum NetworkError: Error {
         self = .noConnection
         return
       default:
-        break
+        self = .api
+        return
       }
     }
     return nil

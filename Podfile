@@ -8,4 +8,8 @@ target 'EasyTest' do
   pod 'Crashlytics', '~> 3.9.0'
   pod 'ModelMapper', '~> 7.2.0'
   pod 'SVProgressHUD', '~> 2.2.2'
+
+  target 'EasyTestTests' do
+    inherit! :complete
+  end
 end
