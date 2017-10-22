@@ -7,4 +7,5 @@ target 'EasyTest' do
   pod 'Cartography', '~> 2.1.0'
   pod 'Crashlytics', '~> 3.9.0'
   pod 'ModelMapper', '~> 7.2.0'
+  pod 'SVProgressHUD', '~> 2.2.2'
 end

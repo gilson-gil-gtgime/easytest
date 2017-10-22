@@ -27,6 +27,7 @@
 		2BC695971F9C4716002A2AEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC695961F9C4716002A2AEE /* Constants.swift */; };
 		2BC695991F9C491D002A2AEE /* GeolocationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC695981F9C491D002A2AEE /* GeolocationResult.swift */; };
 		2BC6959B1F9C49BE002A2AEE /* GeolocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6959A1F9C49BE002A2AEE /* GeolocationAddress.swift */; };
+		2BC6959D1F9C4C49002A2AEE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6959C1F9C4C49002A2AEE /* ProgressHUD.swift */; };
 		FB5C80A722827AE544AE7A47 /* Pods_EasyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59240B0F90DC21AA5932AAC /* Pods_EasyTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		2BC695961F9C4716002A2AEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2BC695981F9C491D002A2AEE /* GeolocationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationResult.swift; sourceTree = "<group>"; };
 		2BC6959A1F9C49BE002A2AEE /* GeolocationAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationAddress.swift; sourceTree = "<group>"; };
+		2BC6959C1F9C4C49002A2AEE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		B0EE8291AA028C67CF2DF060 /* Pods-EasyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyTest/Pods-EasyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DE02916B0F2641C5BD94FD45 /* Pods-EasyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyTest/Pods-EasyTest.release.xcconfig"; sourceTree = "<group>"; };
 		F59240B0F90DC21AA5932AAC /* Pods_EasyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				2B24FFFA1F9AC27B004DA694 /* CompletionHandler.swift */,
+				2BC6959C1F9C4C49002A2AEE /* ProgressHUD.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -337,12 +340,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -391,6 +396,7 @@
 			files = (
 				2B2400001F9AC2B8004DA694 /* NetworkURLRequestable.swift in Sources */,
 				2B00C9E31F998B5F0043808B /* AppDelegate.swift in Sources */,
+				2BC6959D1F9C4C49002A2AEE /* ProgressHUD.swift in Sources */,
 				2B2276681F9C36E90072613A /* CarView.swift in Sources */,
 				2B00CA0A1F998DA50043808B /* MapViewController.swift in Sources */,
 				2B2400021F9AC32F004DA694 /* Endpoints.swift in Sources */,

@@ -73,7 +73,9 @@ final class MapViewController: UIViewController {
 // MARK: - Private
 private extension MapViewController {
   func update(with coordinate: CLLocationCoordinate2D) {
+    ProgressHUD.show()
     mapViewModel?.update(coordinate: coordinate) { [weak self] callback in
+      ProgressHUD.dismiss()
       do {
         let viewModel = try callback()
         self?.mapViewModel = viewModel
