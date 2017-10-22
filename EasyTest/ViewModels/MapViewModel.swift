@@ -43,4 +43,13 @@ struct MapViewModel {
       }
     }
   }
+
+  func nearestCar() -> Car? {
+    guard let coordinate = coordinate else {
+      return nil
+    }
+    let userLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    let nearest = cars.nearest(from: userLocation)
+    return nearest
+  }
 }

@@ -25,9 +25,11 @@ final class MapViewController: UIViewController {
 
   fileprivate var mapViewModel: MapViewModel? {
     didSet {
-      // reload cars annotations
       DispatchQueue.main.async {
-        
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        if let cars = self.mapViewModel?.cars {
+          self.mapView.addAnnotations(cars)
+        }
       }
     }
   }
@@ -72,6 +74,14 @@ private extension MapViewController {
       do {
         let viewModel = try callback()
         self?.mapViewModel = viewModel
+        if viewModel.cars.count == 0 {
+          let alert = UIAlertController(title: "Easy Test", message: "No results found", preferredStyle: .alert)
+          let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+          alert.addAction(okAction)
+          DispatchQueue.main.async {
+            self?.present(alert, animated: true, completion: nil)
+          }
+        }
       } catch let error as NetworkError {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -80,7 +90,12 @@ private extension MapViewController {
           self?.present(alert, animated: true, completion: nil)
         }
       } catch {
-        print(error)
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        DispatchQueue.main.async {
+          self?.present(alert, animated: true, completion: nil)
+        }
       }
     }
   }
@@ -105,8 +120,21 @@ extension MapViewController: MKMapViewDelegate {
     guard let location = userLocation.location else {
       return
     }
+    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    let region = MKCoordinateRegion(center: location.coordinate, span: span)
+    mapView.setRegion(region, animated: true)
     mapViewModel = MapViewModel()
     update(with: location.coordinate)
+  }
+
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    if let carView = mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(CarView.self)) as? CarView {
+      carView.car = annotation as? Car
+      return carView
+    } else {
+      let carView = CarView(car: annotation as? Car)
+      return carView
+    }
   }
 }
 
