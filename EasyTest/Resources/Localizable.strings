@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  EasyTest
+
+  Created by Gilson Gil on 22/10/17.
+  Copyright © 2017 Gilson Gil. All rights reserved.
+*/
+
+"app_name" = "Easy Test";
+"okay" = "Ok";
+"error_messages.title" = "Error";
+"error_messages.no_results" = "No results found";
+"error_messages.connection" = "Connection Problem";
+"error_messages.api" = "Error requesting the API data";
+"map_view_controller.address_not_found" = "endereço não mapeado";

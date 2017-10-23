@@ -18,7 +18,7 @@ final class UserLocationView: MKAnnotationView {
     }
     self.userLocation = userLocation
     super.init(annotation: userLocation, reuseIdentifier: NSStringFromClass(UserLocationView.self))
-    image = UIImage(named: "icon_pin_user_Normal")
+    image = UIImage.EasyTest.userView
   }
 
   required init?(coder aDecoder: NSCoder) {

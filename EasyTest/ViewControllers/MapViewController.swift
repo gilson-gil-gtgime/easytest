@@ -22,7 +22,7 @@ final class MapViewController: UIViewController {
   fileprivate lazy var gpsButton: UIButton = {
     let button = UIButton()
     button.backgroundColor = .white
-    button.setImage(UIImage(named: "icons8-Near Me-100"), for: .normal)
+    button.setImage(UIImage.EasyTest.gpsButton, for: .normal)
     button.imageEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     button.layer.cornerRadius = 4
     button.layer.borderWidth = 1
@@ -106,23 +106,23 @@ private extension MapViewController {
         let viewModel = try callback()
         self?.mapViewModel = viewModel
         if viewModel.cars.count == 0 {
-          let alert = UIAlertController(title: "Easy Test", message: "No results found", preferredStyle: .alert)
-          let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+          let alert = UIAlertController(title: String.EasyTest.appName, message: String.EasyTest.ErrorMessages.noResults, preferredStyle: .alert)
+          let okAction = UIAlertAction(title: String.EasyTest.okay, style: .default, handler: nil)
           alert.addAction(okAction)
           DispatchQueue.main.async {
             self?.present(alert, animated: true, completion: nil)
           }
         }
       } catch let error as NetworkError {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let alert = UIAlertController(title: String.EasyTest.ErrorMessages.title, message: error.localizedDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: String.EasyTest.okay, style: .default, handler: nil)
         alert.addAction(okAction)
         DispatchQueue.main.async {
           self?.present(alert, animated: true, completion: nil)
         }
       } catch {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let alert = UIAlertController(title: String.EasyTest.ErrorMessages.title, message: error.localizedDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: String.EasyTest.okay, style: .default, handler: nil)
         alert.addAction(okAction)
         DispatchQueue.main.async {
           self?.present(alert, animated: true, completion: nil)

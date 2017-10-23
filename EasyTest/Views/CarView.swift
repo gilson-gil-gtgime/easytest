@@ -18,7 +18,7 @@ final class CarView: MKAnnotationView {
     }
     self.car = car
     super.init(annotation: car, reuseIdentifier: NSStringFromClass(CarView.self))
-    image = UIImage(named: "easytaxi_marker_Normal")
+    image = UIImage.EasyTest.carView
   }
 
   required init?(coder aDecoder: NSCoder) {

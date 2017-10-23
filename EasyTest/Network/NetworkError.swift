@@ -33,9 +33,9 @@ enum NetworkError: Error {
   var localizedDescription: String {
     switch self {
     case .timeout, .noConnection:
-      return "Connection Problem"
+      return String.EasyTest.ErrorMessages.connection
     case .api:
-      return "Error requesting the API data"
+      return String.EasyTest.ErrorMessages.api
     }
   }
 }
